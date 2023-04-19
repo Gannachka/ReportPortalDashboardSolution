@@ -14,7 +14,7 @@
     <ConfigSetting Id="VsCoverageConverterToolPath" />
     <ConfigSetting Id="UnchangedFilesPath" />
     <ConfigSetting Id="sonar.pullrequest.cache.basepath" Value="C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution" />
-    <ConfigSetting Id="settings.file.path" Value="C:\Users\Hanna_Miklayeva\ReportPortal\SonarQube.Analysis.xml" />
+    <ConfigSetting Id="settings.file.path" Value="C:\Users\Hanna_Miklayeva\.dotnet\tools\.store\dotnet-sonarscanner\5.13.0\dotnet-sonarscanner\5.13.0\tools\net5.0\any\SonarQube.Analysis.xml" />
   </AdditionalConfig>
   <ServerSettings>
     <Property Name="sonaranalyzer-cs.nuget.packageVersion">8.55.0.65544</Property>
@@ -118,9 +118,11 @@
     <Property Name="sonaranalyzer-vbnet.pluginKey">vbnet</Property>
     <Property Name="sonar.updatecenter.url">https://update.sonarsource.org/update-center.properties</Property>
     <Property Name="sonar.core.id">147B411E-AYeYbaAJD1NyzL8Wgoj9</Property>
-    <Property Name="sonar.core.startTime">4/19/2023 12:14:37 PM</Property>
+    <Property Name="sonar.core.startTime">4/19/2023 4:40:20 PM</Property>
   </ServerSettings>
-  <LocalSettings />
+  <LocalSettings>
+    <Property Name="sonar.host.url">http://localhost:9000</Property>
+  </LocalSettings>
   <AnalyzersSettings>
     <AnalyzerSettings>
       <Language>cs</Language>

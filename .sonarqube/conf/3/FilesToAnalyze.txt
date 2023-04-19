@@ -1,0 +1,11 @@
+﻿C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\Core.UI\BrowserBuilder\BrowserCreator.cs
+C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\Core.UI\BrowserBuilder\BrowserFactory.cs
+C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\Core.UI\Class1.cs
+C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\Core.UI\DriverFactory\WebDriverFactory.cs
+C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\Core.UI\WebdriverWrapper\Browser.cs
+C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\Core.UI\WebdriverWrapper\Interfaces\IBrowser.cs
+C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\Core.UI\WebElementWrapper\Element.cs
+C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\Core.UI\WebElementWrapper\IElement.cs
+C:\Users\Hanna_Miklayeva\.nuget\packages\selenium.webdriver\4.8.2\manager\linux\selenium-manager
+C:\Users\Hanna_Miklayeva\.nuget\packages\selenium.webdriver\4.8.2\manager\macos\selenium-manager
+C:\Users\Hanna_Miklayeva\.nuget\packages\selenium.webdriver\4.8.2\manager\windows\selenium-manager.exe

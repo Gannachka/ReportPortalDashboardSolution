@@ -1,0 +1,10 @@
+﻿C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\Core\AppSettings\ApplicationConfig.cs
+C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\Core\AppSettings\TestConfigurationManager.cs
+C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\Core\BaseTest.cs
+C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\Core\Enums\Browsers.cs
+C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\Core\Log.cs
+C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\Core\appsettings.json
+C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\Core\ReportPortal.Config.json
+C:\Users\Hanna_Miklayeva\.nuget\packages\selenium.webdriver\4.8.2\manager\linux\selenium-manager
+C:\Users\Hanna_Miklayeva\.nuget\packages\selenium.webdriver\4.8.2\manager\macos\selenium-manager
+C:\Users\Hanna_Miklayeva\.nuget\packages\selenium.webdriver\4.8.2\manager\windows\selenium-manager.exe
