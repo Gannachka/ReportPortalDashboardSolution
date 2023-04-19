@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 
 namespace Core.UI.BrowserBuilder
 {
-    public class BrowserFactory
+    public static class BrowserFactory
     {
         public static IBrowser Create(Browsers browserName)
         {

@@ -1,13 +1,13 @@
 ﻿using Core.Enums;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using Microsoft.Edge.SeleniumTools;
 using OpenQA.Selenium.Firefox;
 using System;
+using OpenQA.Selenium.Edge;
 
 namespace Core.UI.DriverFactory
 {
-    public class WebDriverFactory
+    public static class WebDriverFactory
     {
         public static IWebDriver CreateWebDriver(Browsers browser)
         {
@@ -27,8 +27,7 @@ namespace Core.UI.DriverFactory
                     break;
                 case Browsers.Edge:
                     var edgeOptions = new EdgeOptions();
-                    edgeOptions.UseChromium = true;
-                   // edgeOptions.AddArgument("headless");
+                    //edgeOptions.AddArgument("headless");
                     driver = new EdgeDriver(edgeOptions);
                     break;
                 default:

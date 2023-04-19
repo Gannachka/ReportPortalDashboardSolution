@@ -5,8 +5,6 @@ using Core.UI.WebDriverWrapper.Interfaces;
 using OpenQA.Selenium.Support.UI;
 using Core.UI.WebElementWrapper;
 using Core.AppSettings;
-using System.Collections.Generic;
-using System.Linq;
 using OpenQA.Selenium.Interactions;
 using static Core.Log;
 
@@ -14,8 +12,8 @@ namespace Core.UI.WebDriverWrapper
 {
     public class Browser : IBrowser
     {
-        private IWebDriver webDriver;
-        private int waitTimeInSeconds = ApplicationConfig.ExplicitTimeout;
+        private readonly IWebDriver webDriver;
+        private readonly int waitTimeInSeconds = ApplicationConfig.ExplicitTimeout;
 
         public Browser(IWebDriver webDriver)
         {
@@ -24,26 +22,17 @@ namespace Core.UI.WebDriverWrapper
         public Actions actions => new Actions(webDriver);
         public IElement FindElement(By by)
         {
-            try
-            {
                 var wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(waitTimeInSeconds));
                 var webElement = wait.Until(drv => drv.FindElement(by));
 
                 Information("The element {0} was found successfully", by);
 
                 return new Element(webElement, by);
-            }
-            catch (Exception e)
-            {
-                Error("The element {0} was found", by);
-                throw e;
-            }
+                     
         }
 
         public IReadOnlyCollection<IElement> FindElements(By by)
         {
-            try
-            {
                 var wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(waitTimeInSeconds));
                 wait.Until(drv => drv.FindElements(by).Count > 0);
                 var webElements = webDriver.FindElements(by);
@@ -54,13 +43,7 @@ namespace Core.UI.WebDriverWrapper
                     elements.Add(new Element(webElement, by));
                 }
 
-                return elements.ToList();
-
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+                return elements.ToList();                            
         }
 
         public string Url
@@ -115,6 +98,6 @@ namespace Core.UI.WebDriverWrapper
             webDriver.Dispose();
         }
 
-        public Actions Action() => new Actions(webDriver);
+        public Actions Action() => new(webDriver);
     }
 }

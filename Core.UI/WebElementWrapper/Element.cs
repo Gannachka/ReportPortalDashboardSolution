@@ -47,40 +47,28 @@ namespace Core.UI.WebElementWrapper
 
         public IElement FindElement(By by)
         {
-            try
-            {
+
                 var wait = browser.WebBrowserWait();
                 var webElement = wait.Until(drv => drv.FindElement(by));
 
                 return new Element(webElement, by);
-
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+           
         }
 
         public IReadOnlyCollection<IElement> FindElements(By by)
         {
-            try
-            {
-                var wait = browser.WebBrowserWait();
-                wait.Until(drv => drv.FindElements(by).Count > 0);
-                IReadOnlyCollection<IWebElement> webELements = WebElement.FindElements(by);
-                List<IElement> elements = new List<IElement>();
+            var wait = browser.WebBrowserWait();
+            wait.Until(drv => drv.FindElements(by).Count > 0);
+            IReadOnlyCollection<IWebElement> webELements = WebElement.FindElements(by);
+            List<IElement> elements = new List<IElement>();
 
-                foreach (IWebElement element in webELements)
-                {
-                    elements.Add(new Element(element, by));
-                }
-
-                return elements.ToList();
-            }
-            catch (Exception e)
+            foreach (IWebElement element in webELements)
             {
-                throw e;
+                 elements.Add(new Element(element, by));
             }
+
+            return elements.ToList();
+            
         }
 
         public string GetAttribute(string attributeName)

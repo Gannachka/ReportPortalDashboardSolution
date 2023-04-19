@@ -7,7 +7,7 @@ namespace PageObjects.Pages
 {
     public class LoginPage :BasePage
     {
-        private By LogoLocator = By.ClassName("loginPage__logo--4NIFP");
+        private readonly By LogoLocator = By.ClassName("loginPage__logo--4NIFP");
         public LoginPage(IBrowser driver) : base(driver)
         {
             this.Driver = driver;

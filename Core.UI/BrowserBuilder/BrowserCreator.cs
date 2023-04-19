@@ -5,16 +5,13 @@ using System.Threading;
 
 namespace Core.UI.BrowserBuilder
 {
-    public class BrowserSingleton
+    public static class BrowserSingleton
     {
         private static ThreadLocal<IBrowser> instance = new ThreadLocal<IBrowser>();
 
         public static IBrowser GetBrowser(Browsers browserName)
         {
-            if (instance.Value == null)
-            {
-                instance.Value = BrowserFactory.Create(browserName);
-            }
+            instance.Value ??= BrowserFactory.Create(browserName);
 
             return instance.Value;
         }
