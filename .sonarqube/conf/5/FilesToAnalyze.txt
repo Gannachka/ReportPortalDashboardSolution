@@ -1,6 +1,0 @@
-﻿C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\PageObjects\BasePage.cs
-C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\PageObjects\Class1.cs
-C:\Users\Hanna_Miklayeva\ReportPortal\ReportPortalDashboardSolution\PageObjects\Pages\LoginPage.cs
-C:\Users\Hanna_Miklayeva\.nuget\packages\selenium.webdriver\4.8.2\manager\linux\selenium-manager
-C:\Users\Hanna_Miklayeva\.nuget\packages\selenium.webdriver\4.8.2\manager\macos\selenium-manager
-C:\Users\Hanna_Miklayeva\.nuget\packages\selenium.webdriver\4.8.2\manager\windows\selenium-manager.exe
