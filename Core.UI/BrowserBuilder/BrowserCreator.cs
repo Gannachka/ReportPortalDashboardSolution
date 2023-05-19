@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace Core.UI.BrowserBuilder
 {
-    public static class BrowserSingleton
+    public static class BrowserCreator
     {
         private static ThreadLocal<IBrowser> instance = new ThreadLocal<IBrowser>();
 

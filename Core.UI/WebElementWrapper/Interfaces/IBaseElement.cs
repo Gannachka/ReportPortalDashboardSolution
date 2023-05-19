@@ -1,9 +1,9 @@
 ﻿using OpenQA.Selenium;
 using System.Drawing;
 
-namespace Core.UI.WebElementWrapper
+namespace Core.UI.WebElementWrapper.Interfaces
 {
-    public interface IElement
+    public interface IBaseElement
     {
         string TagName { get; }
 
@@ -34,8 +34,8 @@ namespace Core.UI.WebElementWrapper
 
         void MouseOver();
 
-        IElement FindElement(By by);
+        IBaseElement FindElement(By by);
 
-        IReadOnlyCollection<IElement> FindElements(By by);
+        IReadOnlyCollection<IBaseElement> FindElements(By by);
     }
 }

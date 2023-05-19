@@ -1,15 +1,13 @@
-using NUnit.Framework;
-using Core;
-using Core.AppSettings;
-using Core.UI.WebDriverWrapper.Interfaces;
+﻿using Core.AppSettings;
 using Core.UI.BrowserBuilder;
+using Core.UI.WebDriverWrapper.Interfaces;
+using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using TestContext = NUnit.Framework.TestContext;
-using Core.UI.Tests;
 
-namespace Tests.UI
+namespace Core.UI.Tests
 {
-    public class BaseUITest : BaseWebUITest
+    public class BaseWebUITest : BaseTest 
     {
         protected IBrowser Browser;
 

@@ -23,7 +23,7 @@ namespace Core
         }
         public static void Information(string messageTemplate, string text)
         {
-            Logger.Write(LogEventLevel.Information, messageTemplate);
+            Logger.Write(LogEventLevel.Information, messageTemplate, text);
         }
         public static void Information(string messageTempplate, By by)
         {

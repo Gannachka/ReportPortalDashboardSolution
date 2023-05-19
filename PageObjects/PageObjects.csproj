@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Components\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Core.UI\Core.UI.csproj" />
   </ItemGroup>
 

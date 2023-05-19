@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System.Xml.Linq;
+using Core.UI.WebElementWrapper.Interfaces;
 
 namespace Core.UI.WebDriverWrapper.Interfaces
 {
@@ -26,16 +27,15 @@ namespace Core.UI.WebDriverWrapper.Interfaces
         void Close();
 
         IOptions Manage();
-
+        T InvokeFunc<T>(Func<IWebDriver, T> func);
         INavigation Navigate();
-
+         bool IsDisposed { get; }
         void Quit();
-
+        void GoBack();
+        T GoBack<T>() where T: ICreatablePageObject;
+        void GoForward();
+        T GoForward<T>() where T : ICreatablePageObject;
         ITargetLocator SwitchTo();
-
-        IElement FindElement(By by);
-
-        IReadOnlyCollection<IElement> FindElements(By by);
 
         Screenshot TakeScreenshot();
 

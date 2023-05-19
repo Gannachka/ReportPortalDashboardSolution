@@ -7,6 +7,8 @@ using Core.UI.WebElementWrapper;
 using Core.AppSettings;
 using OpenQA.Selenium.Interactions;
 using static Core.Log;
+using Core.UI.Extentions;
+using Core.UI.WebElementWrapper.Interfaces;
 
 namespace Core.UI.WebDriverWrapper
 {
@@ -19,39 +21,26 @@ namespace Core.UI.WebDriverWrapper
         {
             this.webDriver = webDriver;
         }
-        public Actions actions => new Actions(webDriver);
-        public IElement FindElement(By by)
+        public T InvokeFunc<T>(Func<IWebDriver, T> func)
         {
-                var wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(waitTimeInSeconds));
-                var webElement = wait.Until(drv => drv.FindElement(by));
+            this.VerifyIsDisposed();
 
-                Information("The element {0} was found successfully", by);
-
-                return new Element(webElement, by);
-                     
+            return func != null ? func(this.webDriver) : default(T);
         }
-
-        public IReadOnlyCollection<IElement> FindElements(By by)
+        
+        private void VerifyIsDisposed()
         {
-                var wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(waitTimeInSeconds));
-                wait.Until(drv => drv.FindElements(by).Count > 0);
-                var webElements = webDriver.FindElements(by);
-                var elements = new List<IElement>();
-
-                foreach (IWebElement webElement in webElements)
-                {
-                    elements.Add(new Element(webElement, by));
-                }
-
-                return elements.ToList();                            
+            if (this.IsDisposed)
+            {
+                throw new InvalidOperationException("Browser is in disposed state");
+            }
         }
-
         public string Url
         {
             get => webDriver.Url;
             set => webDriver.Url = value;
         }
-
+        public bool IsDisposed { get; private set; }
         public string Title => webDriver.Title;
 
         public WebDriverWait WebBrowserWait() => new WebDriverWait(webDriver, TimeSpan.FromSeconds(waitTimeInSeconds));
@@ -60,8 +49,32 @@ namespace Core.UI.WebDriverWrapper
 
         public string CurrentWindowHandle => webDriver.CurrentWindowHandle;
 
-        public ReadOnlyCollection<string> WindowHandles => webDriver.WindowHandles;
+        public void GoBack()
+        {
+            this.InovkeAction(wd => wd.Navigate().Back());
+        }
+        public T GoBack<T>() where T : ICreatablePageObject
+        {
+            this.GoBack();
+            return DriverExtensions.CreatePageInstance<T>();
+        }
+        public void GoForward()
+        {
+            this.InovkeAction(wd => wd.Navigate().Forward());
+        }
+        public T GoForward<T>() where T : ICreatablePageObject
+        {
 
+            this.GoForward();
+            return DriverExtensions.CreatePageInstance<T>();
+        }
+          
+        public ReadOnlyCollection<string> WindowHandles => webDriver.WindowHandles;
+        public void InovkeAction(Action<IWebDriver> action)
+        {
+            this.VerifyIsDisposed();
+            action?.Invoke(this.webDriver);
+        }
         public IOptions Manage()
         {
             return webDriver.Manage();

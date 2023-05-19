@@ -1,4 +1,5 @@
 ﻿using Core.UI.WebDriverWrapper;
+using Core.UI.WebElementWrapper.Interfaces;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -8,15 +9,26 @@ using static Core.Log;
 
 namespace Core.UI.WebElementWrapper
 {
-    public class Element : IElement
+    public class BaseElement : IBaseElement
     {
         protected IWebElement WebElement;
         protected By By;
         private readonly Browser browser;
 
-        public Element(IWebElement element, By by)
+        public BaseElement(IWebElement element, By by)
         {
             WebElement = element;
+            By = by;
+        }
+
+        public BaseElement(IWebElement element)
+        {
+            WebElement = element;
+          
+        }
+
+        public BaseElement(By by)
+        {
             By = by;
         }
 
@@ -45,26 +57,26 @@ namespace Core.UI.WebElementWrapper
             WebElement.Click();
         }
 
-        public IElement FindElement(By by)
+        public IBaseElement FindElement(By by)
         {
 
                 var wait = browser.WebBrowserWait();
                 var webElement = wait.Until(drv => drv.FindElement(by));
 
-                return new Element(webElement, by);
+                return new BaseElement(webElement, by);
            
         }
 
-        public IReadOnlyCollection<IElement> FindElements(By by)
+        public IReadOnlyCollection<IBaseElement> FindElements(By by)
         {
             var wait = browser.WebBrowserWait();
             wait.Until(drv => drv.FindElements(by).Count > 0);
             IReadOnlyCollection<IWebElement> webELements = WebElement.FindElements(by);
-            List<IElement> elements = new List<IElement>();
+            List<IBaseElement> elements = new List<IBaseElement>();
 
             foreach (IWebElement element in webELements)
             {
-                 elements.Add(new Element(element, by));
+                 elements.Add(new BaseElement(element, by));
             }
 
             return elements.ToList();
@@ -80,12 +92,6 @@ namespace Core.UI.WebElementWrapper
         {
             return WebElement.GetCssValue(propertyName);
         }
-
-        //public string GetProperty(string propertyName)
-        //{
-
-        //    return WebElement.GetProperty(propertyName);
-        //}
 
         public void SendKeys(string text)
         {

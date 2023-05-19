@@ -1,4 +1,7 @@
-﻿using Core.UI.WebDriverWrapper.Interfaces;
+﻿using Core.UI.Elements;
+using Core.UI.Elements.Interfases;
+using Core.UI.Extentions;
+using Core.UI.WebDriverWrapper.Interfaces;
 using Core.UI.WebElementWrapper;
 using OpenQA.Selenium;
 
@@ -13,6 +16,6 @@ namespace PageObjects.Pages
             this.Driver = driver;
         }
 
-        public IElement Logo => Driver.FindElement(LogoLocator);
+        public ILabel Logo => new Label(DriverExtensions.GetElement(LogoLocator));
     }
 }
