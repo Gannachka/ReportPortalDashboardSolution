@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.UI.WebElementWrapper.Interfaces
+namespace Core.UI.WebElements.Interfaces
 {
     /// <summary>
     /// 

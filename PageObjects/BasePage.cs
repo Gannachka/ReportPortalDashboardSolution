@@ -1,5 +1,5 @@
-﻿using Core.UI.WebDriverWrapper.Interfaces;
-using Core.UI.WebElementWrapper.Interfaces;
+﻿using Core.UI.WebDriver.Interfaces;
+using Core.UI.WebElements.Interfaces;
 
 namespace PageObjects
 {

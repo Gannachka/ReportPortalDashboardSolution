@@ -1,18 +1,18 @@
 ﻿using OpenQA.Selenium;
 using System;
 using System.Collections.ObjectModel;
-using Core.UI.WebElementWrapper;
+using Core.UI.WebElements;
 using System.Collections.Generic;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System.Xml.Linq;
-using Core.UI.WebElementWrapper.Interfaces;
+using Core.UI.WebElements.Interfaces;
 
-namespace Core.UI.WebDriverWrapper.Interfaces
+namespace Core.UI.WebDriver.Interfaces
 {
     public interface IBrowser : IDisposable
     {
-        string Url { get; set; }
+        string Url { get; }
 
         string Title { get; }
 
@@ -29,7 +29,7 @@ namespace Core.UI.WebDriverWrapper.Interfaces
         IOptions Manage();
         T InvokeFunc<T>(Func<IWebDriver, T> func);
         INavigation Navigate();
-         bool IsDisposed { get; }
+        bool IsDisposed { get; }
         void Quit();
         void GoBack();
         T GoBack<T>() where T: ICreatablePageObject;

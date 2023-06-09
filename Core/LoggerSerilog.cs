@@ -4,7 +4,7 @@ using Serilog.Events;
 
 namespace Core
 {
-    public static class Log
+    public static class LoggerSerilog
     {
         public static ILogger Logger { get; set; }
 

@@ -1,9 +1,4 @@
-﻿using Core.UI.WebElementWrapper.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.UI.WebElements.Interfaces;
 
 namespace Core.UI.Elements.Interfases
 {

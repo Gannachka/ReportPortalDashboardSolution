@@ -1,13 +1,13 @@
-﻿using Core.UI.WebDriverWrapper;
-using Core.UI.WebElementWrapper.Interfaces;
+﻿using Core.UI.WebDriver;
+using Core.UI.WebElements.Interfaces;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using static Core.Log;
+using static Core.LoggerSerilog;
 
-namespace Core.UI.WebElementWrapper
+namespace Core.UI.WebElements
 {
     public class BaseElement : IBaseElement
     {

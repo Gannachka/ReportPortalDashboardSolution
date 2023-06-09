@@ -1,16 +1,14 @@
 ﻿using OpenQA.Selenium;
-using System;
 using System.Collections.ObjectModel;
-using Core.UI.WebDriverWrapper.Interfaces;
+using Core.UI.WebDriver.Interfaces;
 using OpenQA.Selenium.Support.UI;
-using Core.UI.WebElementWrapper;
 using Core.AppSettings;
 using OpenQA.Selenium.Interactions;
-using static Core.Log;
+using static Core.LoggerSerilog;
 using Core.UI.Extentions;
-using Core.UI.WebElementWrapper.Interfaces;
+using Core.UI.WebElements.Interfaces;
 
-namespace Core.UI.WebDriverWrapper
+namespace Core.UI.WebDriver
 {
     public class Browser : IBrowser
     {
@@ -35,11 +33,8 @@ namespace Core.UI.WebDriverWrapper
                 throw new InvalidOperationException("Browser is in disposed state");
             }
         }
-        public string Url
-        {
-            get => webDriver.Url;
-            set => webDriver.Url = value;
-        }
+        public string Url => webDriver.Url;
+       
         public bool IsDisposed { get; private set; }
         public string Title => webDriver.Title;
 

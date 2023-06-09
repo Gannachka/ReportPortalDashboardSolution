@@ -1,7 +1,7 @@
 ﻿using Core.Enums;
 using Core.UI.DriverFactory;
-using Core.UI.WebDriverWrapper;
-using Core.UI.WebDriverWrapper.Interfaces;
+using Core.UI.WebDriver;
+using Core.UI.WebDriver.Interfaces;
 using OpenQA.Selenium;
 
 namespace Core.UI.BrowserBuilder

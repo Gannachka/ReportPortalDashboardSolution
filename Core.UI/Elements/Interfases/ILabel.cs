@@ -1,4 +1,4 @@
-﻿using Core.UI.WebElementWrapper.Interfaces;
+﻿using Core.UI.WebElements.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

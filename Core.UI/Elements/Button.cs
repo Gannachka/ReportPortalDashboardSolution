@@ -1,15 +1,9 @@
-﻿using Core.UI.WebElementWrapper;
-using static Core.Log;
-using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.UI.WebElements;
+using static Core.LoggerSerilog;
 using OpenQA.Selenium;
 using Core.UI.Extentions;
 using Core.UI.Elements.Interfases;
-using Core.UI.WebElementWrapper.Interfaces;
+using Core.UI.WebElements.Interfaces;
 
 namespace Core.UI.Elements
 {

@@ -7,7 +7,7 @@ namespace Core
     {
         static BaseTest()
         {
-            Log.Logger = new LoggerConfiguration()
+            LoggerSerilog.Logger = new LoggerConfiguration()
                .WriteTo.ReportPortal()
                .WriteTo.Console()
                .WriteTo.File("log.txt")

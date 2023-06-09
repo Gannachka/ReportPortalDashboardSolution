@@ -1,6 +1,6 @@
 ﻿using Core;
 using Core.Enums;
-using Core.UI.WebDriverWrapper.Interfaces;
+using Core.UI.WebDriver.Interfaces;
 using System.Threading;
 
 namespace Core.UI.BrowserBuilder

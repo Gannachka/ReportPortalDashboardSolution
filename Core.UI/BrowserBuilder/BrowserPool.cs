@@ -1,11 +1,5 @@
-﻿using Core.UI.WebDriverWrapper;
-using Core.UI.WebDriverWrapper.Interfaces;
-using System;
+﻿using Core.UI.WebDriver.Interfaces;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.UI.BrowserBuilder
 {

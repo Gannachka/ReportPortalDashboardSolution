@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System.Drawing;
 
-namespace Core.UI.WebElementWrapper.Interfaces
+namespace Core.UI.WebElements.Interfaces
 {
     public interface IBaseElement
     {
@@ -26,8 +26,6 @@ namespace Core.UI.WebElementWrapper.Interfaces
         string GetAttribute(string attributeName);
 
         string GetCssValue(string propertyName);
-
-        //string GetProperty(string propertyName);
 
         void SendKeys(string text);
         void Submit();

@@ -1,6 +1,5 @@
 ﻿using Core.UI.BrowserBuilder;
-using Core.UI.WebDriverWrapper;
-using Core.UI.WebElementWrapper.Interfaces;
+using Core.UI.WebElements.Interfaces;
 using OpenQA.Selenium;
 
 namespace Core.UI.Extentions
@@ -17,8 +16,6 @@ namespace Core.UI.Extentions
         public static IWebElement GetElement(By elementBy)
         {
             return BrowserPool.CurrentBrowser.InvokeFunc(wd => wd.FindElement(elementBy));
-        }
-
-       
+        }       
     }
 }

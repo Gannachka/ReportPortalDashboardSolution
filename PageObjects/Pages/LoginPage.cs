@@ -1,8 +1,8 @@
 ﻿using Core.UI.Elements;
 using Core.UI.Elements.Interfases;
 using Core.UI.Extentions;
-using Core.UI.WebDriverWrapper.Interfaces;
-using Core.UI.WebElementWrapper;
+using Core.UI.WebDriver.Interfaces;
+using Core.UI.WebElements;
 using OpenQA.Selenium;
 
 

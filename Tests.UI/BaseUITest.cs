@@ -1,16 +1,15 @@
+using Core.AppSettings;
+using Core.UI.BrowserBuilder;
+using Core.UI.WebDriver.Interfaces;
+using NUnit.Framework.Interfaces;
 using NUnit.Framework;
 using Core;
-using Core.AppSettings;
-using Core.UI.WebDriverWrapper.Interfaces;
-using Core.UI.BrowserBuilder;
-using NUnit.Framework.Interfaces;
-using TestContext = NUnit.Framework.TestContext;
-using Core.UI.Tests;
 
 namespace Tests.UI
 {
-    public class BaseUITest : BaseWebUITest
+    public class BaseUITest : BaseTest
     {
+
         protected IBrowser Browser;
 
         [SetUp]
@@ -30,6 +29,7 @@ namespace Tests.UI
             Browser.Close();
             Browser.Quit();
         }
+
         public void SaveScreenshot()
         {
             if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
